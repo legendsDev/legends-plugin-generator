@@ -9,7 +9,7 @@ function activate(context) {
 
 	loadInputs();
 	
-	let disposable = vscode.commands.registerCommand('resource-generator-fivem.generate-resource', function (uri) {
+	let disposable = vscode.commands.registerCommand('legends-plugin-generator.generate-plugin', function (uri) {
 		loadInputs(uri.fsPath)
 	});
 	extensionPath = context.extensionPath + "/template"
@@ -93,7 +93,7 @@ function startProcessing(url) {
 	mkdirSync(`${url}/${InputData.pluginName.value}`)
 	writeFolder(`${url}/${InputData.pluginName.value}`, folder);
 
-	vscode.window.showInformationMessage(`You just created a new FiveM Lua Resource named '${InputData.pluginName.value}'.`)
+	vscode.window.showInformationMessage(`You just created a new legends plugin named '${InputData.pluginName.value}'.`)
 }
 
 function Folder(url) {
