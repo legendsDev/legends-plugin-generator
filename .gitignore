@@ -131,3 +131,4 @@ dist
 
 .vscode
 .vscodeignore
+.DS_Store
