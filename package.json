@@ -1,0 +1,64 @@
+{
+	"publisher": "legendsDev",
+	"name": "legends-plugin-generator",
+	"displayName": "legends Plugin Generator",
+	"description": "Simple plugin generator for creating files and folders needed for legends plugins.",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"categories": [
+		"Lua",
+		"Templates",
+		"Generator",
+		"FiveM",
+		"legends"
+	],
+	"author": {
+		"name": "legendsDev"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/legendsDev/legends-plugin-generator"
+	},
+	"icon": "preview/ato.jpg",
+	"homepage": "https://github.com/legendsDev/legends-plugin-generator",
+	"license": "GPLv3",
+	"main": "./extension.js",
+	"files": [
+		"template/fxmanifest.lua"
+	],
+	"directories": {},
+	"contributes": {
+		"commands": [
+			{
+				"command": "legends-plugin-generator.generate-plugin",
+				"title": "Generate legends Plugin"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "explorerResourceIsFolder",
+					"command": "legends-plugin-generator.generate-plugin"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "yarn run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.75.0",
+		"@types/glob": "^8.0.1",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"eslint": "^8.33.0",
+		"glob": "^8.1.0",
+		"mocha": "^10.1.0",
+		"typescript": "^4.9.4",
+		"@vscode/test-electron": "^2.2.2"
+	}
+}
